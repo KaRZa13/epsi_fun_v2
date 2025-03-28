@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <NuxtLink to="/" class="text-4xl font-sniglet-400">
-      EPSI.FUN
+      EPSI.FUN (V2)
     </NuxtLink>
   </div>
 </template>
