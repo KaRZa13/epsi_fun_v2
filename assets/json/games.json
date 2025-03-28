@@ -1,42 +1,42 @@
 [
     {
+        "id": 0,
         "name": "The password game",
-        "img": "/img/games/password.png",
-        "param": "password"
+        "img": "/img/games/password.png"
     },
     {
+        "id": 2,
         "name": "Kitty generator",
-        "img": "/img/games/kitty_generator.png",
-        "param": "kitty"
+        "img": "/img/games/kitty_generator.png"
     },
     {
+        "id": 3,
         "name": "EPSI vs WIS",
-        "img": "/img/games/epsiVwis.png",
-        "param": "epsiVwis"
+        "img": "/img/games/epsiVwis.png"
     },
     {
+        "id": 4,
         "name": "Absurd developper problems",
-        "img": "/img/games/tbm.png",
-        "param": "tbm"
+        "img": "/img/games/tbm.png"
     },
     {
+        "id": 5,
         "name": "Technole",
-        "img": "/img/games/technole.png",
-        "param": "technole"
+        "img": "/img/games/technole.png"
     },
     {
+        "id": 6,
         "name": "Python pendu",
-        "img": "/img/games/python_pendu.png",
-        "param": ""
+        "img": "/img/games/python_pendu.png"
     },
     {
+        "id": 7,
         "name": "EPSI Artefact",
-        "img": "/img/games/epsi_artefact.png",
-        "param": ""
+        "img": "/img/games/epsi_artefact.png"
     },
     {
+        "id": 8,
         "name": "404 Mistakes",
-        "img": "/img/games/mistakes.png",
-        "param": ""
+        "img": "/img/games/mistakes.png"
     }
 ]

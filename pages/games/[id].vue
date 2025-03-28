@@ -1,4 +1,5 @@
 <template>
+  <TopbarGame />
   <div>
     <h1>Détail du Jeu</h1>
     <p>ID du jeu : {{ gameId }}</p>
@@ -9,4 +10,5 @@
 
 const route = useRoute()
 const gameId = route.params.id
+
 </script>
