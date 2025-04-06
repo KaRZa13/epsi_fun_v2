@@ -1,5 +1,3 @@
-import { useFetch } from "nuxt/app"
-
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const apiKey = config.KITTY_API_KEY
@@ -10,16 +8,17 @@ export default defineEventHandler(async (event) => {
       headers: {
         'x-api-key': apiKey,
       },
-    });
+    })
 
     if (!response.ok) {
-      throw new Error(`Erreur lors de la récupération de l'image : ${response.statusText}`);
+      throw new Error(`Erreur lors de la récupération de l'image : ${response.statusText}`)
     }
 
-    const data = await response.json();
-    return data[0]; // Renvoie directement l'image au format { id, url, width, height }
+    const data = await response.json()
+    console.log("🚀 ~ defineEventHandler ~ data:", data)
+    return data 
   } catch (error) {
-    console.error(error);
+    console.error(error)
     return { error: 'Impossible de récupérer l\'image de chat.' };
   }
 })
