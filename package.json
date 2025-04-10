@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.14",
+    "@types/gsap": "^3.0.0",
     "gsap": "^3.12.7",
     "nuxt": "^3.16.0",
     "tailwindcss": "^4.0.14",

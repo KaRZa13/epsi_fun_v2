@@ -13,9 +13,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, nextTick, onMounted } from "vue";
-import gsap from "gsap";
-import { Flip } from "gsap/Flip";
+import { ref, nextTick, onMounted } from "vue"
+import gsap from 'gsap'
+import { Flip } from 'gsap/Flip'
+
 
 gsap.registerPlugin(Flip);
 
