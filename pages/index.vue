@@ -17,6 +17,6 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import games from '../assets/json/games.json'
 </script>

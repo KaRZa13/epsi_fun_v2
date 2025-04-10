@@ -43,19 +43,23 @@ const fetchImages = async () => {
 };
 
 const changeGrid = (index: number): void => {
-  if (index === bigImageIndex.value) return;
-  
-  let state = Flip.getState(figures.value);
-  
-  let oldGrid = images.value[bigImageIndex.value].grid;
-  images.value[bigImageIndex.value].grid = images.value[index].grid;
-  images.value[index].grid = oldGrid;
-  bigImageIndex.value = index;
-  
+  if (index === bigImageIndex.value) return
+
+  const state = Flip.getState(figures.value)
+
+  // échange uniquement les valeurs `grid` des deux images concernées
+  const gridA = images.value[bigImageIndex.value].grid
+  const gridB = images.value[index].grid
+
+  images.value[bigImageIndex.value].grid = gridB
+  images.value[index].grid = gridA
+
+  bigImageIndex.value = index
+
   nextTick(() => {
-    Flip.from(state, { absolute: true, ease: "Power1.inOut" });
-  });
-};
+    Flip.from(state, { absolute: true, ease: "power1.inOut", duration: 0.5 })
+  })
+}
 
 onMounted(fetchImages);
 
@@ -68,7 +72,7 @@ const gridClasses = (grid: string) => {
     "img-5": "col-start-4 col-span-3 row-start-7 row-span-3",
     "img-6": "col-start-1 col-span-3 row-start-7 row-span-3",
   };
-  return gridMap[grid] || "";
+  return gridMap[grid]
 };
 </script>
 

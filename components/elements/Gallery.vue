@@ -1,45 +1,64 @@
 <template>
-  <div ref="gallery" class="h-auto w-screen flex flex-col justify-around items-center">
-    <div class="grid grid-cols-3 grid-rows-3 gap-4 w-1/2 h-3/4 aspect-square">
-      <figure v-for="(item, index) in gridItems" :key="index" :class="[
-        `col-start-${item.colStart} col-end-${item.colEnd}`,
-        `row-start-${item.rowStart} row-end-${item.rowEnd}`,
-        'cursor-pointer'
-      ]">
-        <img v-if="images[index]" :src="images[index]" alt="Image de chat"
-          class="w-full h-full object-cover shadow-md rounded-2xl" />
-      </figure>
-    </div>
-  </div>
-  <div class="flex justify-center mb-4">
-    <button
-      @click="onRefresh"
-      class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 cursor-pointer"
-    >
-      Charger d'autres chats 🐱
-    </button>
+  <div class='grid grid-cols-9 grid-rows-9 gap-4 w-[60vw] max-h-[60vh] aspect-square'>
+
+    <figure 
+      v-for='(image, index) in images'
+      :key='index'
+      :class='gridClasses(image.grid)'
+      @click='changeGrid(index)'
+      ref='(el) => figures[index] = el'
+      class='relative cursor-pointer'>
+
+      <img :src='image.src' alt='cat image' class='absolute h-full w-full object-cover rounded-xl shadow-md' />
+
+    </figure>
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup lang='ts'>
 import gsap from 'gsap'
 import { Flip } from 'gsap/Flip'
 
-interface GridItem {
-  colStart: number
-  colEnd: number
-  rowStart: number
-  rowEnd: number
-}
-
 gsap.registerPlugin(Flip)
 
+interface Image {
+  src: string
+  grid: string
+}
 
+const figures = ref<HTMLElement[]>([])
 
-defineProps<{
-  gridItems: GridItem[]
-  images: string[]
-  onRefresh: () => void
-}>()
+const images = ref<Image[]>([])
 
+const bigImageIndex = ref(0)
+
+const gridClasses = (grid: string) => {
+  const gridMap: Record<string, string> = {
+    'img-1': 'col-span-6 row-span-6',
+    'img-2': 'col-start-7 col-span-3 row-span-3',
+    'img-3': 'col-start-7 col-span-3 row-start-4 row-span-3',
+    'img-4': 'col-start-7 col-span-3 row-start-7 row-span-3',
+    'img-5': 'col-start-4 col-span-3 row-start-7 row-span-3',
+    'img-6': 'col-start-1 col-span-3 row-start-7 row-span-3',
+  }
+  return gridMap[grid]
+}
+
+const changeGrid = (index: number): void => {
+  if (index === bigImageIndex.value) return
+
+  let state = Flip.getState(figures.value)
+
+  let oldGrid = images.value[bigImageIndex.value].grid
+  images.value[bigImageIndex.value].grid = images.value[index].grid
+  images.value[index].grid = oldGrid
+  bigImageIndex.value = index
+  nextTick(() => {
+    Flip.from(state, { absolute: true, ease: "Power1.inOut" })
+  })
+}
+
+defineProps({
+  
+})
 </script>
