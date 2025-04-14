@@ -5,12 +5,13 @@
         EPSI.FUN (V2)
       </span>
       <span class="text-2xl">
-        a tiny website by Rafael
+        a tiny website by Rafael & Colin
       </span>
     </div>
     <div class="absolute inline-flex space-x-2 items-center right-8 top-4">
-      <img src="/img/utils/mail.png" class="h-5">
+      <Icon name="uil:envelope" class="text-2xl" />
       <label>Get new posts</label>
     </div>
   </section>
 </template>
+

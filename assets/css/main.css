@@ -1,16 +1,1 @@
-@font-face {
-    font-family: 'Sniglet-400';
-    src: url(../../public/fonts/Sniglet-Regular.ttf);
-}
-
-@font-face {
-    font-family: 'Sniglet-800';
-    src: url(../../public/fonts/Sniglet-ExtraBold.ttf);
-}
-
 @import "tailwindcss";
-
-@theme {
-    --font-sniglet-400: "Sniglet-400", sans-serif;
-    --font-sniglet-800: "Sniglet-800", sans-serif;
-}

@@ -20,3 +20,9 @@
 <script setup>
 import games from '../assets/json/games.json'
 </script>
+
+<style scoped>
+* {
+  font-family: 'Sniglet', sans-serif;
+}
+</style>

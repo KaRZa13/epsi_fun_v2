@@ -6,11 +6,9 @@
     </span>
 
     <div class="flex flex-col items-center">
-      <div v-if="status === 'pending'">Chargement... ⏳</div>
-      <div v-else-if="error" class="text-red-500">Erreur : {{ error.message }}</div>
-      <div v-else-if="Array.isArray(cats) && cats.length > 0" class="w-full h-full flex flex-col items-center justify-center">
-        <!-- <Gallery :gridItems="gridData" :images="catImages" :onRefresh="refresh"/> -->
-        <tes/>
+
+      <div class="w-full h-full flex flex-col items-center justify-center">
+        <Gallery v-if="catImages" :images="catImages" />
       </div>
 
     </div>
@@ -18,20 +16,18 @@
   </section>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import Gallery from './elements/Gallery.vue'
-import tes from './elements/tes.vue'
 
-interface CatImage {
-  id: string
-  url: string
-  width: number
-  height: number
-}
-
-const { data: cats, refresh, status, error } = useFetch<CatImage[]>('/api/kitty/kitty')
-
-const catImages = computed(() => Array.isArray(cats.value) ? cats.value.map(cat => cat.url) : [])
-
+const { data: catImages, status, error } = await useFetch('/api/kitty/kitty')
 
 </script>
+
+<style scoped>
+* {
+  font-family: 'Sniglet', sans-serif;
+}
+</style>
+
+
+
