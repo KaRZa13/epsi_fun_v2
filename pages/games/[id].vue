@@ -1,8 +1,5 @@
 <template>
   <TopbarGame />
   <KittyGenerator />
+  <DoggyGenerator />
 </template>
-
-<script setup>
-
-</script>
