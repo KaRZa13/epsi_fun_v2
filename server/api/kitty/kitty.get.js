@@ -6,7 +6,6 @@ export default defineEventHandler(async (event) => {
       },
     })
     const data = await response.json()
-    console.log("🚀 ~ defineEventHandler ~ data:", data)
     return data
   } catch (error) {
     console.error('Erreur lors de la récupération des images de chats :', error)
