@@ -1,42 +1,43 @@
 [
     {
-        "id": 0,
         "name": "The password game",
-        "img": "/password.png"
+        "img": "/games-cover/password.png",
+        "slug": "password-game"
+
     },
     {
-        "id": 2,
-        "name": "Kitty generator",
-        "img": "/kitty_generator.png"
-    },
-    {
-        "id": 3,
         "name": "EPSI vs WIS",
-        "img": "/epsiVwis.png"
+        "img": "/games-cover/epsiVwis.png",
+        "slug": "epsi-vs-wis"
     },
     {
-        "id": 4,
+        "name": "Kitty generator",
+        "img": "/games-cover/kitty_generator.png",
+        "slug": "kitty-generator"
+    },
+    {
         "name": "Absurd developper problems",
-        "img": "/tbm.png"
+        "img": "/games-cover/tbm.png",
+        "slug": "absurd-developer-problems"
     },
     {
-        "id": 5,
-        "name": "Technole",
-        "img": "/technole.png"
-    },
-    {
-        "id": 6,
-        "name": "Python pendu",
-        "img": "/python_pendu.png"
-    },
-    {
-        "id": 7,
-        "name": "EPSI Artefact",
-        "img": "/epsi_artefact.png"
-    },
-    {
-        "id": 8,
         "name": "Doggy generator",
-        "img": "/doggy_generator.png"
+        "img": "/games-cover/doggy_generator.png",
+        "slug": "doggy-generator"
+    },
+    {
+        "name": "Technole",
+        "img": "/games-cover/technole.png",
+        "slug": "technole"
+    },
+    {
+        "name": "Python pendu",
+        "img": "/games-cover/python_pendu.png",
+        "slug": "python-pendu"
+    },
+    {
+        "name": "EPSI Artefact",
+        "img": "/games-cover/epsi_artefact.png",
+        "slug": "epsi-artefact"
     }
 ]

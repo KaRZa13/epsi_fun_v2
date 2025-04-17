@@ -1,5 +1,5 @@
 <template>
-  <section class=" h-screen w-screen flex flex-col justify-center items-center font-sniglet-400">
+  <section class="h-screen w-screen flex flex-col justify-center items-center font-sniglet-400">
 
     <span class="absolute top-5 text-2xl">
       <h1>Kitty generator</h1>
@@ -18,7 +18,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Gallery from './elements/Gallery.vue'
 
 const { data: catImages, status, error, refresh } = await useFetch('/api/kitty/kitty')

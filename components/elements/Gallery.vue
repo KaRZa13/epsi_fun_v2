@@ -17,27 +17,28 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import gsap from 'gsap'
 import { Flip } from 'gsap/Flip'
 
 gsap.registerPlugin(Flip)
 
-const props = defineProps({
-  imagesProp: {
-    type: Array,
-    required: true
-  },
-  onRefresh: {
-    type: Function,
-    required: true
-  }
-})
+interface ImageItem {
+  id: number | string
+  url: string
+}
 
-const gridRef = ref(null)
-const localImages = ref([...props.imagesProp])
+interface Props {
+  imagesProp: ImageItem[]
+  onRefresh: () => void
+}
 
-const imageClasses = [
+const props = defineProps<Props>()
+
+const gridRef = ref<HTMLDivElement | null>(null)
+const localImages = ref<ImageItem[]>([...props.imagesProp])
+
+const imageClasses: string[] = [
   'col-span-6 row-span-6',
   'col-start-7 col-span-3 row-span-3',
   'col-start-7 col-span-3 row-start-4 row-span-3',
@@ -46,10 +47,13 @@ const imageClasses = [
   'col-start-1 col-span-3 row-start-7 row-span-3',
 ]
 
-const flipImage = (clickedIndex) => {
+const flipImage = (clickedIndex: number) => {
   if (clickedIndex === 0) return
 
-  const state = Flip.getState(gridRef.value.children)
+  const children = gridRef.value?.children
+  if (!children) return
+
+  const state = Flip.getState(children)
 
   const temp = localImages.value[0]
   localImages.value[0] = localImages.value[clickedIndex]
