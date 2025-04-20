@@ -9,9 +9,8 @@
         </h1>
         <div class="h-full w-1/2 flex flex-col items-center justify-center">
 
-          <button @click="incrementCounter('epsi')" class="cursor-pointer transition-all bg-blue-500 text-slate-100 px-6 py-2 rounded-lg
-            border-b-[4px] border-blue-600 hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-            active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+          <button @click="incrementCounter('epsi')"
+            class="cursor-pointer transition-all bg-blue-500 text-slate-100 px-6 py-2 rounded-lg">
             +1 EPSI
           </button>
 
@@ -20,9 +19,8 @@
         </div>
         <div class="h-full w-1/2 flex flex-col items-center justify-center">
 
-          <button @click="incrementCounter('wis')" class="cursor-pointer transition-all bg-slate-100 text-slate-900 px-6 py-2 rounded-lg
-            border-b-[4px] border-slate-300 hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-            active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+          <button @click="incrementCounter('wis')"
+            class="cursor-pointer transition-all bg-slate-100 text-slate-900 px-6 py-2 rounded-lg">
             +1 WIS
           </button>
 
@@ -36,7 +34,8 @@
         </div>
       </div>
 
-      <div class="absolute top-0 left-0 right-0 w-full max-w-screen h-full m-auto overflow-hidden select-none pointer-events-none"
+      <div
+        class="absolute top-0 left-0 right-0 w-full max-w-screen h-full m-auto overflow-hidden select-none pointer-events-none transition-clip"
         :style="clippedStyle">
         <!-- EPSI -->
         <div ref="epsiSideRef" class="h-full flex bg-orange-200 pointer-events-auto">
@@ -47,9 +46,8 @@
 
           <div class="h-full w-1/2 flex flex-col items-center justify-center">
 
-            <button @click="incrementCounter('epsi')" class="cursor-pointer transition-all bg-orange-500 text-slate-900 px-6 py-2 rounded-lg
-              border-b-[4px] border-orange-700 hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+            <button @click="incrementCounter('epsi')"
+              class="cursor-pointer transition-all bg-orange-500 text-slate-900 px-6 py-2 rounded-lg">
               +1 EPSI
             </button>
 
@@ -59,9 +57,8 @@
 
           <div class="h-full w-1/2 flex flex-col items-center justify-center">
 
-            <button @click="incrementCounter('wis')" class="cursor-pointer transition-all bg-blue-500 text-slate-100 px-6 py-2 rounded-lg
-              border-b-[4px] border-blue-600 hover:brightness-110 hover:-translate-y-[1px] hover:border-b-[6px]
-              active:border-b-[2px] active:brightness-90 active:translate-y-[2px]">
+            <button @click="incrementCounter('wis')"
+              class="cursor-pointer transition-all bg-blue-500 text-slate-100 px-6 py-2 rounded-lg">
               +1 WIS
             </button>
 
@@ -77,7 +74,6 @@
 
 
       </div>
-
     </div>
   </div>
 </template>
@@ -148,7 +144,6 @@ onMounted(() => {
   setInterval(calculateClicksPerSecond, 1000)
 })
 
-// DEBUG SLIDER
 const sliderPosition = ref(50);
 
 const clippedStyle = computed(() => ({
@@ -159,5 +154,9 @@ const clippedStyle = computed(() => ({
 <style scoped>
 * {
   font-family: 'Poppins', sans-serif;
+}
+
+.transition-clip {
+  transition: clip-path 0.3s ease;
 }
 </style>
