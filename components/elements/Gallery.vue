@@ -8,7 +8,7 @@
       @click="flipImage(index)"
     >
       <img :src="image.url" alt="cat image"
-        class="absolute h-full w-full object-cover rounded-xl shadow-md"
+        class="absolute h-full w-full rounded-xl shadow-md object-contain bg-black"
       />
     </figure>
   </div>
@@ -47,7 +47,7 @@ const imageClasses: string[] = [
   'col-start-1 col-span-3 row-start-7 row-span-3',
 ]
 
-const flipImage = (clickedIndex: number) => {
+const flipImage = async (clickedIndex: number) => {
   if (clickedIndex === 0) return
 
   const children = gridRef.value?.children
@@ -58,6 +58,8 @@ const flipImage = (clickedIndex: number) => {
   const temp = localImages.value[0]
   localImages.value[0] = localImages.value[clickedIndex]
   localImages.value[clickedIndex] = temp
+
+  await nextTick()
 
   Flip.from(state, {
     ease: "power1.inOut",
