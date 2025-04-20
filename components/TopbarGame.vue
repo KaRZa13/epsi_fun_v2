@@ -1,6 +1,6 @@
 <template>
-  <div class="absolute p-4">
-    <NuxtLink to="/" class="text-3xl font-sniglet-400">
+  <div class="absolute p-4 z-20">
+    <NuxtLink to="/" class="text-3xl text-slate-900 font-sniglet-400">
       EPSI.FUN (V2)
     </NuxtLink>
   </div>
