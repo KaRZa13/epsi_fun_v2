@@ -104,16 +104,26 @@ type CounterRow = CounterEpsiWis['public']['Tables']['counter-epsi-wis']['Row']
 
 const client = useSupabaseClient<CounterEpsiWis>()
 
+// EPSI Images
 const epsiLogoRef = ref<HTMLImageElement | null>(null)
 const epsiInvertedLogoRef = ref<HTMLImageElement | null>(null)
+
+// EPSI Counter
 const epsiCounter = ref<number>(0)
+
+// EPSI Clicks
 const epsiPerSecond = ref<number>(0)
 const epsiClicks = ref<number>(0)
 const epsiClicksBuffer = ref<number[]>([])
 
+// WIS Images
 const wisLogoRef = ref<HTMLImageElement | null>(null)
 const wisInvertedLogoRef = ref<HTMLImageElement | null>(null)
+
+// WIS Counter
 const wisCounter = ref<number>(0)
+
+// WIS Clicks
 const wisPerSecond = ref<number>(0)
 const wisClicks = ref<number>(0)
 const wisClicksBuffer = ref<number[]>([])
@@ -227,8 +237,6 @@ onMounted(() => {
   setInterval(calculateClicksPerSecond, 100)
   setInterval(resetSliderPosition, 200)
 })
-
-
 
 const clippedStyle = computed(() => ({
   clipPath: `inset(0 ${100 - sliderPosition.value}% 0 0)`,
