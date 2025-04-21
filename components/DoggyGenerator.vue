@@ -1,7 +1,7 @@
 <template>
   <section class="h-screen w-screen flex flex-col justify-center items-center font-sniglet-400">
 
-    <span class="absolute top-5 text-2xl">
+    <span class="absolute top-10 text-4xl">
       <h1>Doggy generator</h1>
     </span>
 

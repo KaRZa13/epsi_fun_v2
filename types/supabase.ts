@@ -7,10 +7,6 @@ export interface CounterEpsiWis {
           name: 'epsi' | 'wis'
           counter: number
         }
-        Insert: {
-          name: 'epsi' | 'wis'
-          counter: number
-        }
         Update: {
           counter?: number
         }
