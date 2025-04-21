@@ -1,9 +1,8 @@
 [
     {
-        "name": "The password game",
-        "img": "/games-cover/password.png",
-        "slug": "password-game"
-
+        "name": "Technole",
+        "img": "/games-cover/technole.png",
+        "slug": "technole"
     },
     {
         "name": "EPSI vs WIS",
@@ -26,9 +25,10 @@
         "slug": "doggy-generator"
     },
     {
-        "name": "Technole",
-        "img": "/games-cover/technole.png",
-        "slug": "technole"
+        "name": "The password game",
+        "img": "/games-cover/password.png",
+        "slug": "password-game"
+
     },
     {
         "name": "Python pendu",
