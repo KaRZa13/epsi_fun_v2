@@ -14,3 +14,25 @@ export interface CounterEpsiWis {
     }
   }
 }
+
+export interface Games {
+  public: {
+    Tables: {
+      'games': {
+        Row: {
+          id: number
+          name: string
+          image: string
+          slug: string
+          tag: string
+        }
+        Insert: {
+          name: string
+          image: string
+          slug: string
+          tag: string
+        }
+      }
+    }
+  }
+}

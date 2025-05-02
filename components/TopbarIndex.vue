@@ -15,3 +15,9 @@
   </section>
 </template>
 
+<style scoped>
+* {
+  font-family: 'Sniglet', sans-serif;
+}
+</style>
+
