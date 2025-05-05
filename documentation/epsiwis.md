@@ -2,6 +2,10 @@
 
 [(Revenir à la page d'accueil)](../README.md)
 
+Ce composant affiche une interface interactive de type "versus" entre EPSI et WIS, où les utilisateurs peuvent cliquer pour faire gagner des points à leur camp respectif. Le visuel est animé avec GSAP, et les scores sont stockés dans Supabase. La position centrale se déplace en fonction du nombre de clics.
+
+![](./img/epsiwis.png)
+
 ## 📦 Structure du composant
 #### Template :
 - Deux zones interactives (EPSI & WIS)

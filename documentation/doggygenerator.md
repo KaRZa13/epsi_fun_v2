@@ -4,7 +4,7 @@
 
 Le composant DoggyGenerator est une page Vue permettant d'afficher une galerie d’images de chats de manière esthétique et interactive. Il utilise l’API <code>/api/kitty/kitty</code> pour récupérer dynamiquement les données à afficher et intègre une animation visuelle via la librairie GSAP (avec le plugin Flip) pour rendre l’expérience utilisateur plus fluide et engageante.
 
-
+![](./img/doggygenerator.png)
 
 ## Fonctionnalités principales
 - Récupération d’images dynamiques : appels API via useFetch.
