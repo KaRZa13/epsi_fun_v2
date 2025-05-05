@@ -5,7 +5,7 @@
       <h1>Kitty generator</h1>
     </span>
 
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-center mt-16">
 
       <div class="w-full h-full flex flex-col items-center justify-center">
         <div v-if="status === 'pending'">Chargement... ⏳</div>

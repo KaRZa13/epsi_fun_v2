@@ -7,7 +7,7 @@
 
       <NuxtLink v-for="(game, index) in games" :key="index" :to="`/games/${game.slug}`"
         class="relative flex flex-wrap w-[300px] h-[200px] border rounded-2xl overflow-hidden group">
-        <img :src="game.image" :alt="game.name" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
+        <img :src="game.img" :alt="game.name" class="w-full h-full object-cover group-hover:scale-110 transition duration-300" />
         <div class="absolute w-full flex justify-center bottom-0 p-2 opacity-0 bg-black/50 text-white group-hover:opacity-100 transition duration-300">
           {{ game.name }}
         </div>
@@ -19,8 +19,9 @@
 
 <script setup lang="ts">
 import type { Games } from '~/types/supabase'
+import games from '@/assets/json/games.json'
 
-const games = ref([])
+// const games = ref<Games[]|[]>([])
 const client = useSupabaseClient()
 const session = useSupabaseSession()
 
@@ -33,6 +34,8 @@ const fetchGames = async () => {
     return []
   }
   games.value = data 
+  console.log("🚀 ~ fetchGames ~ data:", data)
+  console.log("🚀 ~ fetchGames ~ games.value:", games.value)
 }
 
 onMounted(() => {
