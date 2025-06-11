@@ -26,7 +26,7 @@
         <div class="mb-6">
           <label for="confirmPassword" class="block mb-1 font-medium">Confirmer le mot de passe</label>
           <input
-            v-model="password"
+            v-model="confirmPassword"
             type="password"
             id="confirmPassword"
             class="w-full px-4 py-2 border rounded"
@@ -48,11 +48,17 @@
 <script setup lang="ts">
 const email = ref<string>('')
 const password = ref<string>('')
+const confirmPassword = ref<string>('')
 const errorMsg = ref<string>('')
 
 const client = useSupabaseClient()
 
 const handleRegister = async () => {
+  if (password.value !== confirmPassword.value) {
+    errorMsg.value = 'Les mots de passe ne correspondent pas.'
+    return
+  }
+
   const { data, error } = await client.auth.signUp({
     email: email.value,
     password: password.value,
