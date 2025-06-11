@@ -46,6 +46,8 @@
 </template>
 
 <script setup lang="ts">
+
+const router = useRouter()
 const email = ref<string>('')
 const password = ref<string>('')
 const errorMsg = ref<string>('')
@@ -63,6 +65,7 @@ const handleRegister = async () => {
   } else {
     errorMsg.value = ''
     console.log('Utilisateur inscrit:', data)
+    router.push('/')
   }
 }
 </script>
