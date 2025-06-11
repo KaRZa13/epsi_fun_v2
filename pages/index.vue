@@ -37,6 +37,7 @@ const fetchGames = async () => {
 
 onMounted(() => {
   fetchGames()
+  console.log('Session:', session.value)
 })
 
 </script>
